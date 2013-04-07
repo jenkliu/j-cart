@@ -1,4 +1,33 @@
-j-cart
-======
+Project 2: Shopping Cart
+========================
 
-A simple shopping cart application created for 6.170.
+Full problem description is located at:
+https://stellar.mit.edu/S/course/6/fa12/6.170/courseMaterial/topics/topic2/project/text3/text
+
+###Heroku URL
+
+Please put it here: 
+Shopper interface: http://dry-depths-3561.herokuapp.com 
+Shopkeeper interface: http://dry-depths-3561.herokuapp.com/admin (email: admin@admin.com, password: password)
+
+###Notes
+
+Features mentioned in design docs that have yet to be implemented:
+-Cookie expiration (emptying of carts and restocking of products if they are not purchased in time)
+-Shipping addresses
+
+
+###Code Deliverables
+
+Your code should be a rails project located at the root of this repository. To
+create a new rails project, run
+
+    >> rails new .
+
+in this directory.
+
+
+###PDF Deliverables
+
+Additional deliverables, such as the problem-analysis and the design-analysis, should
+be saved as PDF files in the directory called "deliverables"
