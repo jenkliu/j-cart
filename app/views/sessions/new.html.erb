@@ -1,0 +1,18 @@
+
+
+<h1>Log in</h1>
+<%= form_tag sessions_path do %>
+	<%= label_tag :email %>
+	<%= text_field_tag :email %>
+
+	<%= label_tag :password %>
+	<%= password_field_tag :password %>
+
+	<div class="field">
+		<%= submit_tag "Log in" %>
+	</div>
+<% end %>
+
+<br/><br/>Don't have an account yet?
+
+<%= button_to 'Register here', register_path, :class => "btn btn-primary", :method => :get %>

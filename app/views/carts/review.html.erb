@@ -1,0 +1,21 @@
+<h1>Review your order</h1>
+
+<table class="table">
+	<tr>
+		<th>Name</th>
+		<th>Price</th>
+		<th>Quantity</th>
+	</tr>
+
+	<% @items.each do |item| %>
+	<tr>
+		<td><%= item.product.name %></td>
+		<td>$ <%= number_with_precision item.price, :precision => 2 %></td>
+		<td><%= item.qty %></td>
+	</tr>
+	<% end %>
+</table>
+
+<%= button_to 'Edit cart', current_cart_path, :class => "btn", :method => :get %>
+
+<%= button_to 'Place your order', place_order_path(:cart_id => @cart.id), :class => "btn" %>

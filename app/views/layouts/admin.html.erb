@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>J-Cart</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+	<div class="navbar navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="#">J-Cart Admin</a>
+			<div class="pull-right">
+
+				<ul class="nav">
+					<li id="products"><%= link_to 'Orders', admin_orders_path %></li>
+					<li id="products"><%= link_to 'Products', admin_products_path %></li>
+				</ul>
+				<% if logged_in? %>
+					<%= link_to logout_path, :class => "btn", do %>
+						Log out
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<% if notice %>
+	<div class="alert alert-success" id="notice"><%= notice %></div>
+	<% end %>
+
+	<% if flash[:error] %>
+	<div class="alert alert-error"><%= flash[:error] %></div>
+	<% end %>
+
+	<% if @auth_admin %>
+		<h1><%= yield :heading %></h1>
+		<%= yield %>
+	<% else %>
+		<%= link_to 'Back', root_path %>
+	<% end %>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<p>
+  <b>Name:</b>
+  <%= @product.name %>
+</p>
+
+<p>
+  <b>Price:</b>
+   $<%= number_with_precision @product.price, :precision => 2 %>
+</p>
+
+<p>
+  <b>Brand:</b>
+  <%= @product.brand %>
+</p>
+
+<p>
+  <b>Qty:</b>
+  <%= @product.qty_in_stock %>
+</p>
+
+<p>
+  <b>Info:</b>
+  <%= @product.info %>
+</p>
+
+<%= button_to 'Add to Cart', add_to_cart_product_path(@product), :class => "btn btn-primary", :method => :get %>
+
+
+<%= link_to 'Back', products_path %>

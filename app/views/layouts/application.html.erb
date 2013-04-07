@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>J-Cart</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div class="container">
+	<div class="navbar navbar-inverse">
+		<div class="navbar-inner">
+
+			<%= link_to "J-Cart", root_path, :class => "brand" %>
+			<div class="pull-right">
+				<% if logged_in? %>
+					Welcome, <%= current_user.first_name %>!			
+				<% end %>
+				<%= link_to current_cart_path, :class => "btn btn-primary", do %>
+					<i class="icon-shopping-cart icon-white"></i> Your cart: <%= @cart_qty %>
+				<% end %>
+				<% if logged_in? %>
+					<%= link_to logout_path, :class => "btn", do %>
+						Log out
+					<% end %>
+				<% else %>
+					<%= link_to login_path, :class => "btn", do %>
+						Log in/Register
+					<% end %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+
+	<h1><%= yield :heading %></h1>
+
+	<% if notice %>
+	<div class="alert alert-success" id="notice"><%= notice %></div>
+	<% end %>
+
+	<% if flash[:error] %>
+	<div class="alert alert-error"><%= flash[:error] %></div>
+	<% end %>
+
+	<%= yield %>
+</div>
+</body>
+</html>

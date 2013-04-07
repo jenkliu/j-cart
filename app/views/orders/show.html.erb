@@ -1,0 +1,31 @@
+<h1>Recent Orders</h1>
+
+<% if @orders %>
+<table class="table">
+	<tr>
+		<th>ID</th>
+		<th>Date/Time</th>
+		<th>User</th>
+		<th>Address (coming soon)</th>
+		<th>Items</th>
+		<th>Total</th>
+	</tr>
+
+	<% @orders.each do |o| %>
+	<tr>
+		<td><%= o.id %></td>
+		<td><%= o.created_at %></td>
+		<td><%= o.cart.user.email %></td>
+		<td></td>
+		<td><ul>
+				<% o.cart.items.each do |item| %>
+					<li><%= item.name %> - <%= item.qty %></li>
+				<% end %>
+			</ul>
+		</td>
+		<td>$<%= number_with_precision o.cart.order.get_total, :precision => 2 %></td>
+	</tr>
+	<% end %>
+
+</table>
+<% end %>

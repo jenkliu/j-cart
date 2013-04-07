@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+shoes:
+  name: "Shoes"
+  price: 79.99
+  brand: "Nine West"
+  qty_in_stock: 27
+  info: "comfortable and sassy"
+
+dress:
+  name: "Strapless Sweetheart Sundress"
+  price: 35.00
+  brand: "Forever 21"
+  qty_in_stock: 50
+  info: "cute and perfect for spring"

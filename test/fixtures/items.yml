@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+shoes_in_cart:
+  qty: 3
+  price: 79.99
+  product: shoes
+  cart_id: 1
+
+dress_in_cart:
+  qty: 1
+  price: 35.00
+  product: dress
+  cart_id: 1

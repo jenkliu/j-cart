@@ -1,0 +1,11 @@
+bob:
+  id: 1
+  email: bob@mit.edu
+  password_digest: password
+  type:
+
+admin:
+  id: 2
+  email: admin@admin.com
+  password_digest: password
+  type: "Admin"
